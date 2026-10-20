@@ -72,7 +72,7 @@ public partial class Game : Node2D
 
    //GD.Print("BestScore");
 
-    GetTree().ReloadCurrentScene();
+       GetTree().CallDeferred(SceneTree.MethodName.ReloadCurrentScene);
 
 	//GD.Print(BestScore);
 
