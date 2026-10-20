@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b18w7vhmte2ng"]
+
+[ext_resource type="PackedScene" uid="uid://b2t6jk1sqaa5m" path="res://Coin.tscn" id="1_iv8ob"]
+[ext_resource type="Script" uid="uid://4a2s5ryeyaxp" path="res://Pattern2.cs" id="1_xop0v"]
+
+[node name="Pattern2" type="Node2D" unique_id=1022744353]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_xop0v")
+
+[node name="Coin" parent="." unique_id=160438142 instance=ExtResource("1_iv8ob")]
+position = Vector2(41.999996, 42.999996)
+scale = Vector2(0.2, 0.2)
+
+[node name="Coin2" parent="." unique_id=1852495858 instance=ExtResource("1_iv8ob")]
+position = Vector2(129, 43)
+scale = Vector2(0.2, 0.2)
+
+[node name="Coin3" parent="." unique_id=20329900 instance=ExtResource("1_iv8ob")]
+position = Vector2(216, 43)
+scale = Vector2(0.2, 0.2)
+
+[node name="Coin4" parent="." unique_id=1103449441 instance=ExtResource("1_iv8ob")]
+position = Vector2(303, 43)
+scale = Vector2(0.2, 0.2)
+
+[node name="Coin5" parent="." unique_id=1378771555 instance=ExtResource("1_iv8ob")]
+position = Vector2(390, 43)
+scale = Vector2(0.2, 0.2)
+
+[node name="Coin6" parent="." unique_id=498491614 instance=ExtResource("1_iv8ob")]
+position = Vector2(216, 130)
+scale = Vector2(0.2, 0.2)
+
+[node name="Coin7" parent="." unique_id=830897070 instance=ExtResource("1_iv8ob")]
+position = Vector2(42, 130)
+scale = Vector2(0.2, 0.2)
+
+[node name="Coin8" parent="." unique_id=3852670 instance=ExtResource("1_iv8ob")]
+position = Vector2(129, -44)
+scale = Vector2(0.2, 0.2)
+
+[node name="Coin10" parent="." unique_id=1988977850 instance=ExtResource("1_iv8ob")]
+position = Vector2(303, -44)
+scale = Vector2(0.2, 0.2)
+
+[node name="Coin11" parent="." unique_id=1902742184 instance=ExtResource("1_iv8ob")]
+position = Vector2(390, 130)
+scale = Vector2(0.2, 0.2)

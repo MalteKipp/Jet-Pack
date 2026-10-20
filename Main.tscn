@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://ckqjb74ablhlx"]
+
+[ext_resource type="PackedScene" uid="uid://ckxpoklqqkesg" path="res://Game.tscn" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://ca34tiq70fa4k" path="res://Main.cs" id="1_r0du0"]
+[ext_resource type="Texture2D" uid="uid://bbuac16ct3h4k" path="res://Skärmbild 2026-10-17 182149.png" id="2_r0du0"]
+
+[node name="Main" type="Node2D" unique_id=817726788]
+process_mode = 3
+script = ExtResource("1_r0du0")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1142192761]
+scale = Vector2(0.7, 0.7)
+repeat_size = Vector2(1694, 0)
+autoscroll = Vector2(-100, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1950339467]
+position = Vector2(0, 469.97)
+texture = ExtResource("2_r0du0")
+
+[node name="Game" parent="." unique_id=63507430 instance=ExtResource("1_glv2v")]
+process_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=928898721]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1151394753]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Restart" type="Button" parent="CanvasLayer" unique_id=1811323810]
+process_mode = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.5
+offset_top = -15.5
+offset_right = 37.5
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 46
+text = "RESTART"
+
+[connection signal="pressed" from="CanvasLayer/Restart" to="." method="RestartGame"]

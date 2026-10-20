@@ -1,0 +1,126 @@
+[gd_scene format=3 uid="uid://ckxpoklqqkesg"]
+
+[ext_resource type="Script" uid="uid://d2illuyt4tuwb" path="res://Game.cs" id="1_u44n3"]
+[ext_resource type="PackedScene" uid="uid://c4a8v1st7ruwc" path="res://Character.tscn" id="1_wbfu4"]
+[ext_resource type="PackedScene" uid="uid://cgwg0kvjt8bdg" path="res://Plasma.tscn" id="2_xkndl"]
+[ext_resource type="PackedScene" uid="uid://cgvcq7wq0l1jv" path="res://Pattern1.tscn" id="5_r0x5m"]
+[ext_resource type="PackedScene" uid="uid://b2t6jk1sqaa5m" path="res://Coin.tscn" id="5_t88pq"]
+[ext_resource type="PackedScene" uid="uid://b18w7vhmte2ng" path="res://Pattern2.tscn" id="6_3mrqo"]
+[ext_resource type="PackedScene" uid="uid://css5cc7c5uq2f" path="res://Pattern3.tscn" id="7_joorw"]
+[ext_resource type="PackedScene" uid="uid://b3mqgeouxu5vf" path="res://Warning.tscn" id="7_yx171"]
+[ext_resource type="PackedScene" uid="uid://vv4cu1s4bm7e" path="res://Rocket.tscn" id="8_joorw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkndl"]
+size = Vector2(1153.5, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u44n3"]
+size = Vector2(1169.5, 20)
+
+[node name="Game" type="Node2D" unique_id=63507430]
+script = ExtResource("1_u44n3")
+PlasmaPackedScene = ExtResource("2_xkndl")
+CoinsPackedScene1 = ExtResource("5_r0x5m")
+CoinsPackedScene2 = ExtResource("6_3mrqo")
+CoinsPackedScene3 = ExtResource("7_joorw")
+RocketPackedScene = ExtResource("8_joorw")
+
+[node name="Pattern1" parent="." unique_id=1583027478 instance=ExtResource("5_r0x5m")]
+position = Vector2(653, 867)
+
+[node name="Pattern2" parent="." unique_id=1022744353 instance=ExtResource("6_3mrqo")]
+position = Vector2(-12, 874)
+
+[node name="Pattern3" parent="." unique_id=315316865 instance=ExtResource("7_joorw")]
+position = Vector2(-584, 641)
+
+[node name="ScoreTimer" type="Timer" parent="." unique_id=159433855]
+wait_time = 0.05
+autostart = true
+
+[node name="Barry" parent="." unique_id=504074347 instance=ExtResource("1_wbfu4")]
+position = Vector2(59, 311)
+scale = Vector2(0.3, 0.3)
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=673663342]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground" unique_id=306160119]
+position = Vector2(578.25, -14)
+shape = SubResource("RectangleShape2D_xkndl")
+
+[node name="Sky" type="StaticBody2D" parent="." unique_id=1741102988]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Sky" unique_id=387813789]
+position = Vector2(584.75, 658)
+shape = SubResource("RectangleShape2D_u44n3")
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=1913674061]
+wait_time = 3.0
+autostart = true
+
+[node name="SpawnTimer2" type="Timer" parent="." unique_id=868905034]
+wait_time = 5.0
+autostart = true
+
+[node name="SpawnTimer3" type="Timer" parent="." unique_id=364081807]
+wait_time = 10.0
+autostart = true
+
+[node name="PlasmaSpawnPoint" type="Marker2D" parent="." unique_id=1981789718]
+position = Vector2(1154, 328)
+
+[node name="Coin" parent="." unique_id=160438142 instance=ExtResource("5_t88pq")]
+position = Vector2(512, 1033)
+scale = Vector2(0.2, 0.2)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=609658219]
+
+[node name="Coins" type="Label" parent="CanvasLayer" unique_id=907012651]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 37
+text = "Coins: 0"
+
+[node name="BestCoins" type="Label" parent="CanvasLayer" unique_id=29418458]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -352.0
+offset_right = -213.0
+offset_bottom = 51.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 37
+text = "Best Coins: 0"
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1327208364]
+
+[node name="Score" type="Label" parent="CanvasLayer2" unique_id=1735355442]
+offset_top = 58.0
+offset_right = 140.0
+offset_bottom = 109.0
+theme_override_font_sizes/font_size = 37
+text = "Score: 0"
+
+[node name="BestScore" type="Label" parent="CanvasLayer2" unique_id=1996492616]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -352.0
+offset_top = 44.39
+offset_right = -212.0
+offset_bottom = 95.39003
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 37
+text = "Best Score: 0"
+
+[node name="Rocket" parent="." unique_id=334289719 instance=ExtResource("8_joorw")]
+position = Vector2(942, 728)
+
+[node name="Warning" parent="." unique_id=892705783 instance=ExtResource("7_yx171")]
+position = Vector2(89, 727)
+
+[connection signal="timeout" from="ScoreTimer" to="." method="ScoreCount"]
+[connection signal="Death" from="Barry" to="." method="OnBarryDeath"]
+[connection signal="Score" from="Barry" to="." method="CoinsCollect"]
+[connection signal="timeout" from="SpawnTimer" to="." method="OnSpawnTimerTimeout"]
+[connection signal="timeout" from="SpawnTimer2" to="." method="CoinSpawnTimer"]
+[connection signal="timeout" from="SpawnTimer3" to="." method="RocketSpawnTimer"]

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://vv4cu1s4bm7e"]
+
+[ext_resource type="Texture2D" uid="uid://bpq37hkriwghc" path="res://isolated-missile-launch-with-flames-free-png.webp" id="1_al867"]
+[ext_resource type="Script" uid="uid://c635lq1tcnmmq" path="res://Rocket.cs" id="1_g04ui"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0y6u"]
+size = Vector2(624, 83)
+
+[node name="Rocket" type="StaticBody2D" unique_id=334289719]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_g04ui")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=634374246]
+texture = ExtResource("1_al867")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=395449362]
+position = Vector2(-153, 7.5)
+shape = SubResource("RectangleShape2D_j0y6u")

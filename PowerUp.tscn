@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://23xamyy22yt2"]
+
+[ext_resource type="Texture2D" uid="uid://ctkyj7ej7rq1m" path="res://922869.png" id="1_1jq60"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_klull"]
+radius = 253.0079
+
+[node name="PowerUp" type="StaticBody2D" unique_id=379906769]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1729780734]
+shape = SubResource("CircleShape2D_klull")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=946108635]
+texture = ExtResource("1_1jq60")

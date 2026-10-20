@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b3mqgeouxu5vf"]
+
+[ext_resource type="Script" uid="uid://dyjr3yq1fnrag" path="res://Warning.cs" id="1_xb44a"]
+[ext_resource type="Texture2D" uid="uid://c0fs6rg8bprri" path="res://warning-sign-icon-transparent-background-free-png.webp" id="2_w44qq"]
+
+[node name="Warning" type="Node2D" unique_id=892705783]
+script = ExtResource("1_xb44a")
+
+[node name="RocketWarning" type="Sprite2D" parent="." unique_id=1480114812]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_w44qq")

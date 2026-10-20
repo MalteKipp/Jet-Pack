@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cgwg0kvjt8bdg"]
+
+[ext_resource type="Texture2D" uid="uid://dm7chjhmv8wec" path="res://Zapper.webp" id="1_2frc0"]
+[ext_resource type="Script" uid="uid://c5t3po870kn6c" path="res://Plasma.cs" id="1_vunn7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oolk3"]
+size = Vector2(42.426414, 243.24478)
+
+[node name="Plasma" type="StaticBody2D" unique_id=133969827]
+script = ExtResource("1_vunn7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2115445415]
+position = Vector2(-6.000003, 1.0000033)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_oolk3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=340312652]
+position = Vector2(-9, -6)
+rotation = -3.939208
+texture = ExtResource("1_2frc0")
