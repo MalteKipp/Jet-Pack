@@ -18,7 +18,7 @@ public partial class Main : Node2D
             GetTree().Paused;
 		}
 	}
-lkhjgfu
+
 
 public void RestartGame()
 {
