@@ -16,6 +16,8 @@ size = Vector2(1153.5, 24)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u44n3"]
 size = Vector2(1169.5, 20)
 
+[sub_resource type="Theme" id="Theme_yhmtn"]
+
 [node name="Game" type="Node2D" unique_id=63507430]
 script = ExtResource("1_u44n3")
 PlasmaPackedScene = ExtResource("2_xkndl")
@@ -77,8 +79,14 @@ scale = Vector2(0.2, 0.2)
 [node name="Coins" type="Label" parent="CanvasLayer" unique_id=907012651]
 offset_right = 40.0
 offset_bottom = 23.0
+theme = SubResource("Theme_yhmtn")
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 37
 text = "Coins: 0"
+uppercase = true
 
 [node name="BestCoins" type="Label" parent="CanvasLayer" unique_id=29418458]
 anchors_preset = 1
@@ -88,8 +96,12 @@ offset_left = -352.0
 offset_right = -213.0
 offset_bottom = 51.0
 grow_horizontal = 0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 37
 text = "Best Coins: 0"
+uppercase = true
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1327208364]
 
@@ -97,8 +109,12 @@ text = "Best Coins: 0"
 offset_top = 58.0
 offset_right = 140.0
 offset_bottom = 109.0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 37
 text = "Score: 0"
+uppercase = true
 
 [node name="BestScore" type="Label" parent="CanvasLayer2" unique_id=1996492616]
 anchors_preset = 1
@@ -109,8 +125,12 @@ offset_top = 44.39
 offset_right = -212.0
 offset_bottom = 95.39003
 grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0.99607843, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_font_sizes/font_size = 37
 text = "Best Score: 0"
+uppercase = true
 
 [node name="Rocket" parent="." unique_id=334289719 instance=ExtResource("8_joorw")]
 position = Vector2(942, 728)
